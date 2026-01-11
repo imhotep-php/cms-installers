@@ -1,0 +1,21 @@
+{
+  "name": "imhotep/cms-installers",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "description": "A Imhotep CMS Composer library installer",
+  "keywords": ["installer", "imhotep", "cms"],
+  "autoload": {
+    "psr-4": { "Composer\\Installers\\": "src/Composer/Installers" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Composer\\Installers\\Test\\": "tests/Composer/Installers/Test" }
+  },
+  "extra": {
+    "class": "Composer\\Installers\\Plugin",
+    "plugin-modifies-install-path": true
+  },
+  "require": {
+    "php": "^8.0",
+    "composer-plugin-api": "^1.0 || ^2.0"
+  }
+}
