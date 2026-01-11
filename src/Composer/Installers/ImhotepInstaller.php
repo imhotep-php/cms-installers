@@ -43,6 +43,7 @@ class ImhotepInstaller extends BaseInstaller
     {
         $vars['name'] = str_replace(['cms', 'module', 'imhotep'], '', $vars['name']);
         $vars['name'] = $this->pregReplace('/-+/', '-', $vars['name']);
+        $vars['name'] = trim($vars['name'], '-');
         $vars['vendor'] = $this->pregReplace('/[^a-z0-9_]/i', '', $vars['vendor']);
 
         return $vars;
@@ -56,6 +57,7 @@ class ImhotepInstaller extends BaseInstaller
     {
         $vars['name'] = str_replace(['cms', 'plugin', 'imhotep'], '', $vars['name']);
         $vars['name'] = $this->pregReplace('/-+/', '-', $vars['name']);
+        $vars['name'] = trim($vars['name'], '-');
         $vars['vendor'] = $this->pregReplace('/[^a-z0-9_]/i', '', $vars['vendor']);
 
         return $vars;
@@ -69,6 +71,7 @@ class ImhotepInstaller extends BaseInstaller
     {
         $vars['name'] = str_replace(['cms', 'theme', 'imhotep'], '', $vars['name']);
         $vars['name'] = $this->pregReplace('/-+/', '-', $vars['name']);
+        $vars['name'] = trim($vars['name'], '-');
         $vars['vendor'] = $this->pregReplace('/[^a-z0-9_]/i', '', $vars['vendor']);
 
         return $vars;
