@@ -41,8 +41,8 @@ class ImhotepInstaller extends BaseInstaller
      */
     protected function inflectModuleVars(array $vars): array
     {
-        $vars['name'] = $this->pregReplace('/^cms|module$/', '', $vars['name']);
-        $vars['name'] = $this->pregReplace('/^-+$/', '-', $vars['name']);
+        $vars['name'] = str_replace(['cms', 'module', 'imhotep'], '', $vars['name']);
+        $vars['name'] = $this->pregReplace('/-+/', '-', $vars['name']);
         $vars['vendor'] = $this->pregReplace('/[^a-z0-9_]/i', '', $vars['vendor']);
 
         return $vars;
@@ -54,8 +54,8 @@ class ImhotepInstaller extends BaseInstaller
      */
     protected function inflectPluginVars(array $vars): array
     {
-        $vars['name'] = $this->pregReplace('/^cms|plugin$/', '', $vars['name']);
-        $vars['name'] = $this->pregReplace('/^-+$/', '-', $vars['name']);
+        $vars['name'] = str_replace(['cms', 'plugin', 'imhotep'], '', $vars['name']);
+        $vars['name'] = $this->pregReplace('/-+/', '-', $vars['name']);
         $vars['vendor'] = $this->pregReplace('/[^a-z0-9_]/i', '', $vars['vendor']);
 
         return $vars;
@@ -67,8 +67,8 @@ class ImhotepInstaller extends BaseInstaller
      */
     protected function inflectThemeVars(array $vars): array
     {
-        $vars['name'] = $this->pregReplace('/^cms|theme$/', '', $vars['name']);
-        $vars['name'] = $this->pregReplace('/^-+$/', '-', $vars['name']);
+        $vars['name'] = str_replace(['cms', 'theme', 'imhotep'], '', $vars['name']);
+        $vars['name'] = $this->pregReplace('/-+/', '-', $vars['name']);
         $vars['vendor'] = $this->pregReplace('/[^a-z0-9_]/i', '', $vars['vendor']);
 
         return $vars;
